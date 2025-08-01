@@ -25,7 +25,7 @@ export default function Layout() {
       {/* Desktop View */}
       {!isMobile && (
         <div className="flex gap-[10px] mt-[5px]">
-          <div className="w-[28%] ml-[5px] h-[90vh] border"><Sidebar /></div>
+          <div className="w-[28%] ml-[5px] h-[90vh] "><Sidebar /></div>
           <div className="w-[72%] h-[90vh] rounded-[5px]"><Outlet /></div>
         </div>
       )}
