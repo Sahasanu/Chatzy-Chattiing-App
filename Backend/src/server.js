@@ -11,8 +11,6 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT;
 
-
-
 const allowedOrigins = [
   'http://localhost:5173',
   'https://chatzy-eta.vercel.app'
