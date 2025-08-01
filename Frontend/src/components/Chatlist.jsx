@@ -87,7 +87,7 @@ const ChatList = ({ setUnreadMessageCount }) => {
   if (loading) return <div className="text-white p-4"><Loading /></div>;
 
   return (
-    <div className="chats space-y-[20px] h-[83vh] pt-[2vh] mt-[1vh] bg-gray-800 rounded-[5px] px-[10px] overflow-y-auto">
+    <div className="chats space-y-[20px] h-[85vh] lg:h-[81vh] pt-[2vh] lg:mt-[1vh] bg-gray-800 rounded-[5px] px-[10px] overflow-y-auto">
       {channels.map((channel) => {
         const messages = channel.state.messages;
         const lastMessage = messages[messages.length - 1];

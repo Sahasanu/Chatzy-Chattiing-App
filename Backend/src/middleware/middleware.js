@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
-import User from "../models/user.js"; // ✅ fixed extension
+import User from "../models/user.js";
 
-export const protectroute = async (req, res, next) => { // ✅ fixed order
+export const protectroute = async (req, res, next) => { 
   try {
     const token = req.cookies.jwt;
 

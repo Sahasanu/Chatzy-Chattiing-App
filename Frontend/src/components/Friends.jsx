@@ -63,7 +63,7 @@ function Friends({ setPendingFriendCount }) {
 
 
     return (
-        <div className='bg-gray-800 h-[83vh] rounded-[5px] relative px-5 mt-[1vh] '>
+        <div className='bg-gray-800 h-[81vh] rounded-[5px] relative px-5 mt-[1vh] '>
             <div className="flex userbar w-[100%] py-[5px]">
                 <div className="heading w-full py-2  flex items-center justify-between">
                     <p className='text-[25px] font-[500]'>Your Friends</p>
@@ -79,7 +79,7 @@ function Friends({ setPendingFriendCount }) {
             ) : friends.length === 0 ? (
                 <p>No friends yet</p>
             ) : (
-                <div className="flex flex-col items-center gap-5 ">
+                <div className="grid grid-cols-2  gap-5 ">
                     {friends.map(friend => (
                         <FriendCard key={friend._id} friend={friend} />
                     ))}
@@ -104,7 +104,7 @@ function Friends({ setPendingFriendCount }) {
                     <p>Check back later</p>
                 </div>
             ) : (
-                <div className='flex flex-col '>
+                <div className='grid grid-cols-2 w-[full] gap-2 '>
                     {recommendedUsers.map((user) => (
                         <RecommendCard
                             key={user._id}

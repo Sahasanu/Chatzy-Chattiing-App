@@ -63,7 +63,6 @@ const signup = async (req, res) => {
   }
 };
 
-// --- LOGIN ---
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -93,7 +92,7 @@ const login = async (req, res) => {
   }
 };
 
-// --- LOGOUT (Fixed for cross-origin) ---
+
 const logout = async (req, res) => {
   res.clearCookie("jwt", {
     httpOnly: true,

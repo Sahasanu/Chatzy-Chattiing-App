@@ -31,7 +31,7 @@ function Notification({setUnreadNotificationCount }) {
 
 
   return (
-    <div className='Notification space-y-[20px] h-[83vh] pt-[2vh] mt-[1vh] bg-gray-800 rounded-[5px] px-[10px]'>
+    <div className='Notification space-y-[20px] h-[81vh] pt-[2vh] mt-[1vh] bg-gray-800 rounded-[5px] px-[10px]'>
       <p className='text-[25px] font-[500] border-b border-white'>Notification</p>
 
       {isLoading ? (

@@ -72,9 +72,9 @@ const CustomChannelHeader = ({ videoClient }) => {
     }, [videoClient, channel, targetUser, navigate]);
 
     return (
-        <div className="channel-header w-full h-[8vh] flex items-center bg-[#243447] px-10 justify-between rounded-b-[10px]">
+        <div className="channel-header w-full h-[8vh] flex items-center bg-[#243447] px-3 lg:px-10 justify-between rounded-b-[0px]">
             {/* User info */}
-            <div className="user-info flex w-[30%] space-x-5 items-center">
+            <div className="user-info flex  w-[50%] lg:w-[30%] space-x-5 items-center">
                 <img
                     src={targetUser?.user.image}
                     alt={targetUser?.user.name}
@@ -89,22 +89,22 @@ const CustomChannelHeader = ({ videoClient }) => {
             </div>
 
             {/* Call buttons */}
-            <div className="call-buttons w-[15%] lg:w-[10%] flex justify-around">
+            <div className="call-buttons w-[25%]  lg:w-[10%] flex justify-between">
                 <button
                     onClick={() => startCall(false)}
                     disabled={!targetUser?.user.online}
                     className="p-2 hover:bg-[#3e4758] rounded-full transition"
                     aria-label="Start audio call"
                 >
-                    <img src={callIcon} alt="Audio call" className="w-6 h-6" />
+                    <img src={callIcon} alt="Audio call" className=" w-[30px]" />
                 </button>
                 <button
                     onClick={() => startCall(true)}
                     disabled={!targetUser?.user.online}
-                    className="p-2 hover:bg-[#3e4758] rounded-full transition"
+                    className=" hover:bg-[#3e4758] rounded-full transition"
                     aria-label="Start video call"
                 >
-                    <img src={videoIcon} alt="Video call" className="w-6 h-6" />
+                    <img src={videoIcon} alt="Video call" className="w-[30px]" />
                 </button>
             </div>
         </div>

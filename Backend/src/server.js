@@ -11,19 +11,31 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT;
 
+
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://chatzy-eta.vercel.app'
+];
+
 app.use(cors({
-  origin: "https://chatzy-eta.vercel.app", // your Vercel frontend URL
+  origin: function (origin, callback) {
+    // allow requests with no origin (like mobile apps or curl)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
-// app.use(cors({
-//   origin: "http://localhost:5173", 
-//   credentials: true
-// }));
+
 
 
 // ✅ Middleware first
 app.use(express.json());
-app.use(cookieParser()); // Optional but useful for authentication
+app.use(cookieParser());
 
 // ✅ Then routes
 app.use("/auth", authrouter);

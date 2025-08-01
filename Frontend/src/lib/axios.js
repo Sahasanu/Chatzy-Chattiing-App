@@ -1,10 +1,10 @@
 import axios from 'axios';
 
+const isLocalhost = window.location.hostname === 'localhost';
+
 export const axiosInstance = axios.create({
-  baseURL: "https://chat-backend-w071.onrender.com",
-  withCredentials: true   // ✅ allows cookies to be sent with request
+  baseURL: isLocalhost 
+    ? 'http://localhost:5000' 
+    : 'https://chat-backend-w071.onrender.com',
+  withCredentials: true
 });
-// export const axiosInstance = axios.create({
-//   baseURL: "http://localhost:5000",
-//   withCredentials: true   // ✅ allows cookies to be sent with request
-// });
