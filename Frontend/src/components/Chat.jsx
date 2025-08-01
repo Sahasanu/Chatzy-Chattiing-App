@@ -97,7 +97,7 @@ const ChatPage = () => {
   }
 
   return (
-    <div className="bg-[#043933] custom-chat-theme h-[100vh]  lg:h-[89vh] rounded-[5px] ">
+    <div className="bg-[#043933] custom-chat-theme h-[95vh]  lg:h-[89vh] rounded-[5px] ">
       <Chat client={chatClient}>
         <Channel channel={channel}>
           <div className="w-full h-full flex flex-col">
